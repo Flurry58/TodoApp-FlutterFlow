@@ -186,40 +186,47 @@ class _TasksWidgetState extends State<TasksWidget> {
                   ),
                 ),
               ),
-              FFButtonWidget(
-                onPressed: () async {
-                  GoRouter.of(context).prepareAuthEvent();
-                  await authManager.signOut();
-                  GoRouter.of(context).clearRedirectLocation();
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                child: FFButtonWidget(
+                  onPressed: () async {
+                    GoRouter.of(context).prepareAuthEvent();
+                    await authManager.signOut();
+                    GoRouter.of(context).clearRedirectLocation();
 
-                  context.pushNamedAuth(LoginWidget.routeName, context.mounted);
-                },
-                text: 'Logout\n',
-                options: FFButtonOptions(
-                  height: 40.0,
-                  padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
-                  iconPadding:
-                      EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                  color: FlutterFlowTheme.of(context).green,
-                  textStyle: FlutterFlowTheme.of(context).labelMedium.override(
-                        font: GoogleFonts.inter(
-                          fontWeight: FontWeight.w500,
-                          fontStyle: FlutterFlowTheme.of(context)
-                              .labelMedium
-                              .fontStyle,
-                        ),
-                        fontSize: 20.0,
-                        letterSpacing: 0.0,
-                        fontWeight: FontWeight.w500,
-                        fontStyle:
-                            FlutterFlowTheme.of(context).labelMedium.fontStyle,
-                      ),
-                  elevation: 0.0,
-                  borderSide: BorderSide(
-                    color: FlutterFlowTheme.of(context).customColor1,
-                    width: 1.0,
+                    context.pushNamedAuth(
+                        LoginWidget.routeName, context.mounted);
+                  },
+                  text: 'Logout\n',
+                  options: FFButtonOptions(
+                    height: 40.0,
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                    iconPadding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                    color: FlutterFlowTheme.of(context).green,
+                    textStyle:
+                        FlutterFlowTheme.of(context).labelMedium.override(
+                              font: GoogleFonts.inter(
+                                fontWeight: FontWeight.w500,
+                                fontStyle: FlutterFlowTheme.of(context)
+                                    .labelMedium
+                                    .fontStyle,
+                              ),
+                              fontSize: 20.0,
+                              letterSpacing: 0.0,
+                              fontWeight: FontWeight.w500,
+                              fontStyle: FlutterFlowTheme.of(context)
+                                  .labelMedium
+                                  .fontStyle,
+                            ),
+                    elevation: 0.0,
+                    borderSide: BorderSide(
+                      color: FlutterFlowTheme.of(context).customColor1,
+                      width: 1.0,
+                    ),
+                    borderRadius: BorderRadius.circular(24.0),
                   ),
-                  borderRadius: BorderRadius.circular(24.0),
                 ),
               ),
             ],
