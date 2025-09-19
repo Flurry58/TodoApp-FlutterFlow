@@ -1,0 +1,33 @@
+"tasks": {
+      "type": "array",
+      "description": "Collection of task documents",
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "description": "Title of the task"
+          },
+          "details": {
+            "type": "string",
+            "description": "Extended details about the task"
+          },
+          "completed": {
+            "type": "boolean",
+            "description": "Indicates whether the task is completed"
+          },
+          "created": {
+            "type": "string",
+            "format": "date-time",
+            "description": "Task creation timestamp"
+          },
+          "user": {
+            "type": "string",
+            "pattern": "^/users/[A-Za-z0-9_-]+$",
+            "description": "Reference to a user document in Firestore"
+          }
+        },
+        "required": ["title", "completed", "created", "user"]
+      }
+    }
+  }
