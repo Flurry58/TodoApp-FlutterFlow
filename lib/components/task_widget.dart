@@ -31,6 +31,8 @@ class _TaskWidgetState extends State<TaskWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => TaskModel());
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

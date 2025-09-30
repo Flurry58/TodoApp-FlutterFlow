@@ -35,6 +35,8 @@ class _AddTaskWidgetState extends State<AddTaskWidget> {
 
     _model.detailsTextController ??= TextEditingController();
     _model.detailsFocusNode ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override

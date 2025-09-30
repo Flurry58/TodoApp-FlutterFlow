@@ -41,6 +41,8 @@ class _DetailsWidgetState extends State<DetailsWidget> {
     _model.textController2 ??=
         TextEditingController(text: widget.taskDoc?.details);
     _model.textFieldFocusNode2 ??= FocusNode();
+
+    WidgetsBinding.instance.addPostFrameCallback((_) => safeSetState(() {}));
   }
 
   @override
